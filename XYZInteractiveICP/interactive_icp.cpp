@@ -78,8 +78,6 @@ loadXYZFile(const std::string &file_name, pcl::PointCloud< PointT > &cloud)
 
   pcl::io::savePCDFileASCII (file_name.substr(0,file_name.size() - 4) + ".pcd", cloud);
 
-  // string substr (size_t pos = 0, size_t len = npos) const;
-
 }
 
 int
@@ -118,22 +116,8 @@ main (int argc,
 
 
 
-loadXYZFile(argv[1], *cloud_in);
-
-  // Previous Code to load ply file
-  // if (pcl::io::loadPLYFile (argv[1], *cloud_in) < 0)
-  // {
-  //   PCL_ERROR ("Error loading cloud %s.\n", argv[1]);
-  //   return (-1);
-  // }
-
-
-
-
-
-
-
-
+  loadXYZFile(argv[1], *cloud_in);
+  
   std::cout << "\nLoaded file " << argv[1] << " (" << cloud_in->size () << " points) in " << time.toc () << " ms\n" << std::endl;
 
   // Defining a rotation matrix and translation vector
